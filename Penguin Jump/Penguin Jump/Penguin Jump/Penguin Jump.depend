@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1748006657 source:d:\cse360\penguin jump\penguin jump.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<time.h>
+
