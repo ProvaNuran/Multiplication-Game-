@@ -1,4 +1,4 @@
-# Penguin Jump Multiplication Race 🐧🎮
+# Penguin Jump Multiplication Race 
 
 ## Abstract
 Penguin Jump Multiplication Race is a C-based educational game that teaches multiplication and fundamental computer architecture concepts. In this human-vs-computer console race, players move forward on a track by correctly answering multiplication questions. The game uses concepts like register simulation, memory management, control flow, and file I/O to simulate how computers work under the hood.
@@ -37,9 +37,26 @@ Penguin Jump Multiplication Race is a C-based educational game that teaches mult
 - Modular Design: Functions like `initPlayers()`, `playTurn()`, `saveGame()`.
 - State Machine: Game behaves as a finite state machine (FSM).
 
-## Compilation
-Compile with GCC:
+### Build PDCurses (one-time setup)
 ```bash
-gcc main.c -o penguin_race
-## Run the Game
-./penguin_race
+git clone https://github.com/wmcbrine/PDCurses
+cd PDCurses/wincon
+mingw32-make -f Makefile CFLAGS="-O2 -Wall -I.. -DHAVE_NO_INFOEX"
+```
+This produces `pdcurses.a` in `PDCurses/wincon`.
+ 
+### Build the game
+```bash
+gcc "Penguin Jump.c" -o "Penguin Jump.exe" -I<path_to_PDCurses> -L<path_to_PDCurses>/wincon -lpdcurses
+```
+ 
+Or in Code::Blocks:
+- Add `PDCurses` folder to **Compiler search directories**
+- Add `PDCurses/wincon` folder to **Linker search directories**
+- Add `pdcurses.a` to **Link libraries**
+### Run
+Run the built `.exe` directly (double-click or from a terminal), not through the IDE's console runner, to avoid console API conflicts with PDCurses.
+```bash
+./Penguin Jump.exe
+```
+ 
