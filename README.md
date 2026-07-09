@@ -36,7 +36,7 @@ Penguin Jump Multiplication Race is a C-based educational game that teaches mult
 - Modular Design: Functions like `initPlayers()`, `playTurn()`, `saveGame()`.
 - State Machine: Game behaves as a finite state machine (FSM).
 
-  ## Screenshots
+## Screenshots
  
 | Gameplay in progress | Wrong answer |
 |---|---|
